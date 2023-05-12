@@ -7,7 +7,7 @@ import math
 import logging
 
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+logging.basicConfig(level=logging.INFO, filename='log.txt', format='%(asctime)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 class CaseA(HttpUser):
    wait_time = between(1, 5)
