@@ -4,8 +4,14 @@ import os
 from datetime import datetime
 from locust import HttpUser, task, between
 import math
+import logging
+
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+
 class CaseA(HttpUser):
    wait_time = between(1, 5)
+   LOGGER = logging.getLogger(__name__)
 
 
    @task
@@ -15,9 +21,8 @@ class CaseA(HttpUser):
        }
        response = self.client.post("/", json=seed)
        response.raise_for_status()
-       result = response.json()
-       print(result)
-
+       result = response.json()       
+       CaseA.LOGGER.info(result)
 
    def on_start(self):
        print('start')
