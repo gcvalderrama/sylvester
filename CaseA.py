@@ -7,7 +7,17 @@ import math
 import logging
 
 
-logging.basicConfig(level=logging.INFO, filename='log.txt', format='%(asctime)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+
+file_handler = logging.FileHandler('logfile.log')
+file_handler.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(message)s')
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
 
 class CaseA(HttpUser):
    wait_time = between(1, 5)
