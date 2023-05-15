@@ -1,0 +1,22 @@
+valderrama_gregory@sylvester-santiago:~$ ping -c 10  35.158.128.128
+PING 35.158.128.128 (35.158.128.128) 56(84) bytes of data.
+64 bytes from 35.158.128.128: icmp_seq=1 ttl=118 time=203 ms
+64 bytes from 35.158.128.128: icmp_seq=2 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=3 ttl=118 time=203 ms
+64 bytes from 35.158.128.128: icmp_seq=4 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=5 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=6 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=7 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=8 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=9 ttl=118 time=202 ms
+64 bytes from 35.158.128.128: icmp_seq=10 ttl=118 time=202 ms
+
+--- 35.158.128.128 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9015ms
+rtt min/avg/max/mdev = 201.528/201.820/202.754/0.419 ms
+
+
+Type,Name,Request Count,Failure Count,Median Response Time,Average Response Time,Min Response Time,Max Response Time,Average Content Size,Requests/s,Failures/s,50%,66%,75%,80%,90%,95%,98%,99%,99.9%,99.99%,100%
+POST,/,901,13,260.0,280.1908634406228,32.59193399998139,670.9346270000083,496.1986681465039,3.0197640388551004,0.04357040233642209,260,260,260,260,310,490,500,500,670,670,670
+,Aggregated,901,13,260.0,280.1908634406228,32.59193399998139,670.9346270000083,496.1986681465039,3.0197640388551004,0.04357040233642209,260,260,260,260,310,490,500,500,670,670,670
+
