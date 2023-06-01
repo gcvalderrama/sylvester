@@ -9,4 +9,4 @@ run-local-case-a:
 
 run-aws-case-a:
 	rm -f case-a*.csv
-	locust -f CaseA.py -H ${host} -t 300s  --headless --users 200 --spawn-rate 5 --csv case-a --skip-log-setup
+	locust -f CaseA.py -H ${host} -t 600s  --headless --users 200 --spawn-rate 5 --csv case-a --skip-log-setup

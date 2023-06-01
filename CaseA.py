@@ -25,6 +25,8 @@ custom_logger.addHandler(file_handler)
 custom_logger.addHandler(console_handler)
 #custom_logger.addHandler(null_handler)
 
+results = []
+
 class CaseA(HttpUser):
     wait_time = between(1, 5)    
 
@@ -36,10 +38,11 @@ class CaseA(HttpUser):
         response = self.client.post("/", json=seed)
         response.raise_for_status()
         result = response.json()        
+        results.append(result)
         custom_logger.debug(result)
 
     def on_start(self):        
         print('start request')
 
     def on_stop(self):
-        print('stop')
+        print('stop {}'.format(len(results)))
