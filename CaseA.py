@@ -52,4 +52,5 @@ class CaseA(HttpUser):
         percentiles = [25, 50, 75, 95, 99]  # percentiles we want to calculate
         temp = {p: np.percentile(data, p) for p in percentiles}
         pprint(temp)
+        pprint(results[0])
         #print('stop {}'.format(len(results)))
