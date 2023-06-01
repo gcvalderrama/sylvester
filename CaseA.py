@@ -47,8 +47,8 @@ class CaseA(HttpUser):
         print('start request')
 
     def on_stop(self):
-        
-        numbers = [ float(c['request']['reqInfo']['headers']['x-custom-edge-proxy-latency']) for c in results]
+
+        data = [ float(c['request']['reqInfo']['headers']['x-custom-edge-proxy-latency']) for c in results]
         percentiles = [25, 50, 75, 95, 99]  # percentiles we want to calculate
         temp = {p: np.percentile(data, p) for p in percentiles}
         pprint(temp)
