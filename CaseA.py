@@ -2,9 +2,11 @@
 import time
 import os
 from datetime import datetime
+from pprint import pprint
 from locust import HttpUser, task, between
 import math
 import logging
+import numpy as np
 
 format = '%(asctime)s %(filename)s %(lineno)s : %(message)s'
 
@@ -45,4 +47,8 @@ class CaseA(HttpUser):
         print('start request')
 
     def on_stop(self):
-        print('stop {}'.format(len(results)))
+        numbers = [ float(c['request']['reqInfo']['x-custom-edge-proxy-latency']) for c in results]
+        percentiles = [25, 50, 75, 95, 99]  # percentiles we want to calculate
+        temp = {p: np.percentile(data, p) for p in percentiles}
+        pprint(temp)
+        #print('stop {}'.format(len(results)))
